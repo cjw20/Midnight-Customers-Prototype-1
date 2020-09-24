@@ -50,12 +50,16 @@ public class PlayerController : MonoBehaviour
                 {
                     inventoryManager.addItem(itemScript.itemName, itemScript.amount); 
                     Destroy(currentInteraction);  //Adds item to inventory and removes from overworld
+                    //maybe only pickup 1 at a time, and only destroy if 0 left?
                 }
 
                 else if (itemScript.isMiniGameTrigger)
                 {
                     //trigger minigame
                 }
+
+                //if neither???
+
             }
            
         }

@@ -12,6 +12,8 @@ public class InteractableItem : MonoBehaviour
     public string noPrereqMessage; //message shown to player if they dont have proper prerequisite fullfilled
     public string prerequisite; //name of requirement for interaction ex. Mop
 
+    MiniGameTrigger miniGameTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,13 @@ public class InteractableItem : MonoBehaviour
     void Update()
     {
         
+    }
+    public void StartInteraction()
+    {
+        if (isMiniGameTrigger)
+        {
+            miniGameTrigger = GetComponent<MiniGameTrigger>();
+        }
+        //trigger item specific interaction
     }
 }
