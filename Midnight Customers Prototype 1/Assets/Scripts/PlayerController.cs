@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public GameObject currentInteraction;  //object player is currently interacting with
     InteractableItem itemScript; //script for item player is interacting with
+    bool hasPrerequisite; //if player has requirement for interaction
 
     bool nearCustomer;
     public GameObject closestCustomer; //for use if multiple customers are in range of player interaction
@@ -38,10 +39,22 @@ public class PlayerController : MonoBehaviour
             
             else if(currentInteraction != null)   //prioritizes customers over items, may need to change how this works later
             {
+                if (itemScript.hasPrerequisite)
+                {
+                    hasPrerequisite = inventoryManager.itemCheck(itemScript.prerequisite); //true if prerequisite is held false if not
+
+                    if (!hasPrerequisite) //end interaction
+                        return; //show no prereq message here
+                }
                 if (itemScript.canHold)
                 {
                     inventoryManager.addItem(itemScript.itemName, itemScript.amount); 
                     Destroy(currentInteraction);  //Adds item to inventory and removes from overworld
+                }
+
+                else if (itemScript.isMiniGameTrigger)
+                {
+                    //trigger minigame
                 }
             }
            

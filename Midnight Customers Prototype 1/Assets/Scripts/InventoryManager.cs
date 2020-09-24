@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void addItem(string ID, int amount)
     {
@@ -32,14 +32,25 @@ public class InventoryManager : MonoBehaviour
 
     public void useItem(string ID)
     {
-        
+
         inventoryItems[ID] -= 1;
         if (inventoryItems[ID] < 1)
         {
             inventoryItems.Remove(ID);
         }
         //call item specific function here or elsewhere
-        
+
     }
+
+    public bool itemCheck(string itemName)
+    {
+        if (inventoryItems.ContainsKey(itemName))
+            return true;
+        
+        else
+            return false;
+       
+    }
+       
 
 }
