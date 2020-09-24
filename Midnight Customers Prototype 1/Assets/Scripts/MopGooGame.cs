@@ -7,13 +7,15 @@ public class MopGooGame : MonoBehaviour
     public GameObject goo;
     public GameObject mop;
 
+    GameObject gameMop; //instance of mop present ingame
+
     public GameObject mopSpawn;
 
 
     private void Start()
     {
 
-        Instantiate(mop, mopSpawn.transform);
+        gameMop = Instantiate(mop, mopSpawn.transform);
 
         //instantiate neccessary objects
     }
