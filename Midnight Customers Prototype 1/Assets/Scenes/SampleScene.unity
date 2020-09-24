@@ -128,11 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 577932516475701920, guid: 120327d102efbc04e868f6c83122463d, type: 3}
   m_PrefabInstance: {fileID: 577932516431145828}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &111681989 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 577932516475701921, guid: 120327d102efbc04e868f6c83122463d, type: 3}
-  m_PrefabInstance: {fileID: 577932516431145828}
-  m_PrefabAsset: {fileID: 0}
 --- !u!70 &111681990
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -143,7 +138,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -268,10 +263,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Customer
       objectReference: {fileID: 0}
+    - target: {fileID: 577932516475701921, guid: 120327d102efbc04e868f6c83122463d, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 577932516475701922, guid: 120327d102efbc04e868f6c83122463d, type: 3}
       propertyPath: body
       value: 
-      objectReference: {fileID: 111681989}
+      objectReference: {fileID: 0}
     - target: {fileID: 577932516475701922, guid: 120327d102efbc04e868f6c83122463d, type: 3}
       propertyPath: moveSpeed
       value: 3

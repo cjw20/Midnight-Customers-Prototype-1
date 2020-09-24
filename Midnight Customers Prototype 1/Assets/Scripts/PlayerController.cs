@@ -9,14 +9,17 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D body;
     public float moveSpeed;
     public GameObject currentInteraction;  //object player is currently interacting with
+    InteractableItem itemScript; //script for item player is interacting with
 
     bool nearCustomer;
-    public GameObject closestCustomer;
+    public GameObject closestCustomer; //for use if multiple customers are in range of player interaction
+
+    InventoryManager inventoryManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        inventoryManager = GetComponent<InventoryManager>();
     }
 
     // Update is called once per frame
@@ -35,7 +38,11 @@ public class PlayerController : MonoBehaviour
             
             else if(currentInteraction != null)   //prioritizes customers over items, may need to change how this works later
             {
-                //interact
+                if (itemScript.canHold)
+                {
+                    inventoryManager.addItem(itemScript.itemName, itemScript.amount); 
+                    Destroy(currentInteraction);  //Adds item to inventory and removes from overworld
+                }
             }
            
         }
@@ -51,6 +58,7 @@ public class PlayerController : MonoBehaviour
         if(other.tag == "Interactable")
         {
             currentInteraction = other.gameObject;
+            itemScript = currentInteraction.GetComponent<InteractableItem>();
         }
 
         if(other.tag == "Customer")
@@ -67,11 +75,12 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Interactable")
         {
             currentInteraction = null;
+            itemScript = null;
         }
         if (other.tag == "Customer")
         {
             nearCustomer = false;
-            closestCustomer = null;
+            closestCustomer = null;  //resets variable so that player can no longer interact after leaving trigger area
 
         }
     }
