@@ -7,15 +7,15 @@ public class MopGooGame : MonoBehaviour
     public GameObject goo;
     public GameObject mop;
 
-    GameObject miniGameControl;
-    MiniGameControl mgC; //game control script on ^
+    public GameObject mopSpawn;
+
 
     private void Start()
     {
-        miniGameControl = GameObject.Find("Mini Game Control");
-        mgC = miniGameControl.GetComponent<MiniGameControl>();
 
-        //send objects to minigame control
+        Instantiate(mop, mopSpawn.transform);
+
+        //instantiate neccessary objects
     }
 
     
