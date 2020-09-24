@@ -8,7 +8,7 @@ public class MiniGameControl : MonoBehaviour
 {
     public List<GameObject> minigameObjects; //objects that will need to be instantiated for minigame
     public GameObject minigame; //controller of minigame
-    public Canvas canvas;
+    public UIController uiController;
     GameObject minigameWindow;
 
     // Start is called before the first frame update
@@ -22,7 +22,11 @@ public class MiniGameControl : MonoBehaviour
     {
         
     }
-
+    public void SetGame(GameObject game)
+    {
+        //gets minigame from interactableitem script
+        minigame = game;
+    }
     public void LoadMiniGame()
     {
 

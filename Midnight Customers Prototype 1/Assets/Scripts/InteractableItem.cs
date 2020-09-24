@@ -15,6 +15,7 @@ public class InteractableItem : MonoBehaviour
     
     public GameObject miniGame; //minigame that will be triggered
     GameObject miniGameControl;
+    MiniGameControl mgC; //game control script on ^
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,10 @@ public class InteractableItem : MonoBehaviour
     {
         if (isMiniGameTrigger)
         {
-            miniGameControl = GameObject.Find("Mini Game Control"); 
+            miniGameControl = GameObject.Find("Mini Game Control");
+            mgC = miniGameControl.GetComponent<MiniGameControl>();
+            mgC.SetGame(miniGame); //sends specific minigame to control
+            
         }
         //trigger item specific interaction
     }
