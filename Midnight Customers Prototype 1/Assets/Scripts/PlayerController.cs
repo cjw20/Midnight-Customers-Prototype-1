@@ -17,10 +17,14 @@ public class PlayerController : MonoBehaviour
 
     InventoryManager inventoryManager;
 
+    GameControl gameControl;
+
     // Start is called before the first frame update
     void Start()
     {
         inventoryManager = GetComponent<InventoryManager>();
+        gameControl = GameObject.Find("Game Control").GetComponent<GameControl>();
+        SetPosition();
     }
 
     // Update is called once per frame
@@ -101,5 +105,15 @@ public class PlayerController : MonoBehaviour
             closestCustomer = null;  //resets variable so that player can no longer interact after leaving trigger area
 
         }
+    }
+
+    void SetPosition()
+    {
+        if(gameControl.playerPos == null)
+        {
+            return; //if a position isn't set, stay in default position
+        }
+
+        this.gameObject.transform.position = gameControl.playerPos;
     }
 }

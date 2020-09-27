@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour
 {
     public static GameControl control;
+
+    public Vector3 playerPos; //position of player before scene change
+    GameObject player;
     void Awake()
     {
         if (control == null)
@@ -22,14 +25,18 @@ public class GameControl : MonoBehaviour
 
     public void LoadMiniGame(string gameName)
     {
+        player = GameObject.FindWithTag("Player");
+        playerPos = player.transform.position; //saves players position so game knows where to put them on return to store area
+
         SceneManager.LoadScene(gameName);
-        //save position of player, customers etc here
+        
+        
     }
 
     public void LoadArea(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        //set positions of where everything was before
+        
     }
    
 }
