@@ -4,56 +4,44 @@ using UnityEngine;
 
 public class MiniGameMop : MonoBehaviour
 {
-    bool isCleaning = true; //if action is taking place
 
-    Quaternion angle; //angle of mop
-    float startingAngle; //starting angle of mop
-    float currentAngle;
-    public float upperBound;
-    public float lowerBound; //max angles of rotation for mop
+    public Collider2D mopHead; //part of mop that is used to clean
+    float startPosX;
+    float startPosY;
 
-    public float movementMagnitude; //amount and direction of rotation
-    bool reachedPeak; //if the rotation has reached either bound
-
+    bool isHeld = false; //if the player is currently clicking on and draging mop
     void Start()
     {
-        startingAngle = this.gameObject.transform.rotation.z;
+       
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if(isHeld == true)
         {
-            if(isCleaning == false)
-            {
-                StartCoroutine(Clean());
-            }
-        }
+            Vector3 mousePos;
+            mousePos = Input.mousePosition;
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        if(isCleaning == true)
-        {
-            currentAngle = this.gameObject.transform.rotation.z;
-
-            if(currentAngle == upperBound || currentAngle == lowerBound)
-            {
-                reachedPeak = true;
-            }
-            if (reachedPeak)
-            {
-                movementMagnitude *= -1f;  //reverses direction of rotation when it reaches either bound
-                reachedPeak = false;
-            }
-
-            angle = Quaternion.Euler(0, 0, currentAngle + movementMagnitude);
-            Debug.Log(currentAngle);
-            this.gameObject.transform.rotation = Quaternion.Slerp(this.gameObject.transform.rotation, angle, Time.deltaTime);
-
+            this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, 0);
         }
     }
 
-    IEnumerator Clean()
+    private void OnMouseDown()
     {
-        isCleaning = true;
-        yield break;
+        //currently left or right mouse, can specify later if want
+        Vector3 mousePos; 
+        mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        startPosX = mousePos.x - this.transform.localPosition.x;
+        startPosY = mousePos.y - this.transform.localPosition.y; //keeps mop from jumping around when picking it up
+
+        isHeld = true;
+    }
+
+    private void OnMouseUp()
+    {
+        isHeld = false;
     }
 }
