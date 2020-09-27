@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Customer
+  - MiniGamePlayer
   layers:
   - Default
   - TransparentFX
