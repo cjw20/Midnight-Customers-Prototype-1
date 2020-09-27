@@ -11,7 +11,7 @@ public class MopGooGame : MonoBehaviour
 
     public GameObject[] gooSpawns;
 
-    public GameObject mopSpawn;
+    
 
 
     private void Start()

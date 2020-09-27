@@ -6,16 +6,29 @@ public class Goo : MonoBehaviour
 {
     bool isBeingCleaned; //if mop is in contact with goo
     float timeCleaned; //how long the mop is in contact with the goo
+    public float cleanTimeRequired = 1.5f; //time needed in order for goo to disapear
+    public float moveSpeed = 3f;
+    Vector2 movement;
+    public float directionTime = 1f; //time before goo changes directions
+    float timeLeft; //used to see how much time has passed
 
-    // Start is called before the first frame update
+    Rigidbody2D rb;
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        timeLeft = directionTime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeLeft -= Time.deltaTime; 
+        if(timeLeft < 0)
+        {
+            timeLeft += directionTime;
+            movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)); //chooses a random direction for slime to move
+        }
+
         if(isBeingCleaned == true)
         {
             timeCleaned += Time.deltaTime;  //time.deltatime = 0.0166 seconds 
@@ -27,11 +40,16 @@ public class Goo : MonoBehaviour
             timeCleaned = 0; //resets time to 0 when goo escapes mop. Maybe dont reset?
         }
 
-        if(timeCleaned > 1.5f)
+        if(timeCleaned > cleanTimeRequired)
         {
             Destroy(this.gameObject); //destroys slime after a certain amount of time being cleaned
         }
        
+    }
+
+    private void FixedUpdate()
+    {
+        rb.AddForce(movement * moveSpeed);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
