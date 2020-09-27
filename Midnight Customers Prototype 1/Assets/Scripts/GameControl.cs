@@ -25,9 +25,11 @@ public class GameControl : MonoBehaviour
         SceneManager.LoadScene(gameName);
         //save position of player, customers etc here
     }
-    // Update is called once per frame
-    void Update()
+
+    public void LoadArea(string sceneName)
     {
-        
+        SceneManager.LoadScene(sceneName);
+        //set positions of where everything was before
     }
+   
 }

@@ -12,11 +12,15 @@ public class Goo : MonoBehaviour
     public float directionTime = 1f; //time before goo changes directions
     float timeLeft; //used to see how much time has passed
 
+    public MopGooGame mgControl; 
+
     Rigidbody2D rb;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         timeLeft = directionTime;
+
+        mgControl = GameObject.Find("Mop Goo MiniGame").GetComponent<MopGooGame>();
     }
 
     // Update is called once per frame
@@ -43,6 +47,7 @@ public class Goo : MonoBehaviour
         if(timeCleaned > cleanTimeRequired)
         {
             Destroy(this.gameObject); //destroys slime after a certain amount of time being cleaned
+            mgControl.UpdateGooCount(-1);
         }
        
     }

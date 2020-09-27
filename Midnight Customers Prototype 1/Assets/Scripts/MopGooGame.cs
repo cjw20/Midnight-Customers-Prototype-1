@@ -7,24 +7,38 @@ public class MopGooGame : MonoBehaviour
     public GameObject goo;
     
 
-    GameObject gameMop; //instance of mop present ingame
-
     public GameObject[] gooSpawns;
 
-    
+    int remainingGoo = 0;
 
+    public GameObject gameControl;
+    GameControl gc;
 
     private void Start()
     {
+        gameControl = GameObject.Find("Game Control");
+        gc = gameControl.GetComponent<GameControl>();
 
-        
-
-        foreach(GameObject gooSpawn in gooSpawns)
+        foreach (GameObject gooSpawn in gooSpawns)
         {
             Instantiate(goo, gooSpawn.transform);
+            remainingGoo++;
         }
         //instantiate neccessary objects
     }
 
-    
+    private void Update()
+    {
+        if(remainingGoo < 1)
+        {
+            gc.LoadArea("Store");  //create not hard coded way later?
+        }
+    }
+
+    public void UpdateGooCount(int change) //change is how many goo to add/subtract
+    {
+        remainingGoo += change;
+    }
+
+
 }

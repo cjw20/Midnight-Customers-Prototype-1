@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    
 
     public Dictionary<string, int> inventoryItems;
-    // Start is called before the first frame update
+
+    
+   
     void Start()
     {
-        inventoryItems = new Dictionary<string, int>(); //may need to add don't destroy on load or something to keep inventory between scenes
+        if(inventoryItems == null)
+        {
+            inventoryItems = new Dictionary<string, int>(); //may need to add don't destroy on load or something to keep inventory between scenes
+        }
+       
     }
 
     // Update is called once per frame
