@@ -10,10 +10,7 @@ public class MiniGameControl : MonoBehaviour
     public UIController uiController;
 
     GameObject miniGame; //minigame to be played
-    public Camera mainCamera; //store camera
-    public Camera miniCamera; //camera for minigame
-
-    bool cameraSwitch = true;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -29,15 +26,7 @@ public class MiniGameControl : MonoBehaviour
     public void SetGame(GameObject game)
     {
         miniGame = Instantiate(game, this.gameObject.transform);
-        SwitchCam();
+       
     }
-    public void SwitchCam()
-    {
-
-        //switches which camera is active
-        cameraSwitch = !cameraSwitch;
-        mainCamera.gameObject.SetActive(cameraSwitch);
-        miniCamera.gameObject.SetActive(!cameraSwitch);
-    }
-    
+  
 }

@@ -13,9 +13,9 @@ public class InteractableItem : MonoBehaviour
     public string prerequisite; //name of requirement for interaction ex. Mop
 
     
-    public GameObject miniGame; //minigame that will be triggered
-    public GameObject miniGameControl;
-    MiniGameControl mGC;
+    public string miniGame; //minigame that will be triggered
+    public GameObject gameControl;
+    GameControl gc;
     
     // Start is called before the first frame update
     void Start()
@@ -33,12 +33,12 @@ public class InteractableItem : MonoBehaviour
         if (isMiniGameTrigger)
         {
 
-            miniGameControl = GameObject.Find("Mini Game Control");
-            mGC = miniGameControl.GetComponent<MiniGameControl>();
+            gameControl = GameObject.Find("Game Control");
+            gc = gameControl.GetComponent<GameControl>();
 
-            mGC.SetGame(miniGame);
+            gc.LoadMiniGame(miniGame);
 
-            Destroy(this.gameObject); //removes from world after interaction
+            
 
             
         }
