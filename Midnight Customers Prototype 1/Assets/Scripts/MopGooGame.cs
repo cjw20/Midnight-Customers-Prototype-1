@@ -5,7 +5,7 @@ using UnityEngine;
 public class MopGooGame : MonoBehaviour
 {
     public GameObject goo;
-    public GameObject mop;
+    
 
     GameObject gameMop; //instance of mop present ingame
 
@@ -17,7 +17,7 @@ public class MopGooGame : MonoBehaviour
     private void Start()
     {
 
-        gameMop = Instantiate(mop, mopSpawn.transform);
+        
 
         foreach(GameObject gooSpawn in gooSpawns)
         {
