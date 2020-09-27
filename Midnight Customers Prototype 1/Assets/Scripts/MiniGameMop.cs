@@ -9,10 +9,12 @@ public class MiniGameMop : MonoBehaviour
     float startPosX;
     float startPosY;
 
+   // Camera miniGameCamera;
+
     bool isHeld = false; //if the player is currently clicking on and draging mop
     void Start()
     {
-       
+       // miniGameCamera = GameObject.Find("Mini Game Camera").GetComponent<Camera>;
     }
 
     void Update()
@@ -21,7 +23,7 @@ public class MiniGameMop : MonoBehaviour
         {
             Vector3 mousePos;
             mousePos = Input.mousePosition;
-            mousePos = Camera.current.ScreenToWorldPoint(mousePos);
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
             this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX, mousePos.y - startPosY, 0);
         }
@@ -32,7 +34,7 @@ public class MiniGameMop : MonoBehaviour
         //currently left or right mouse, can specify later if want
         Vector3 mousePos; 
         mousePos = Input.mousePosition;
-        mousePos = Camera.current.ScreenToWorldPoint(mousePos);
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
         startPosX = mousePos.x - this.transform.localPosition.x;
         startPosY = mousePos.y - this.transform.localPosition.y; //keeps mop from jumping around when picking it up
