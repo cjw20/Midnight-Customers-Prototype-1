@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
                 else if (itemScript.isMiniGameTrigger)
                 {
+                    itemScript.StartInteraction();
                     //trigger minigame
                 }
 

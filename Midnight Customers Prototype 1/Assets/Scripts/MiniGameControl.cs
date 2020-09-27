@@ -6,10 +6,14 @@ using UnityEngine;
 
 public class MiniGameControl : MonoBehaviour
 {
-    //DO WE NEED THIS??????????????????????????????????????????
-    public GameObject minigame; //controller of minigame
+   
     public UIController uiController;
-    GameObject minigameWindow;
+
+    GameObject miniGame; //minigame to be played
+    public Camera mainCamera; //store camera
+    public Camera miniCamera; //camera for minigame
+
+    bool cameraSwitch = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,16 +28,16 @@ public class MiniGameControl : MonoBehaviour
     }
     public void SetGame(GameObject game)
     {
-        //gets minigame from interactableitem script
-        minigame = game;
+        miniGame = Instantiate(game, this.gameObject.transform);
+        SwitchCam();
     }
-    public void LoadMiniGame()
+    public void SwitchCam()
     {
 
+        //switches which camera is active
+        cameraSwitch = !cameraSwitch;
+        mainCamera.gameObject.SetActive(cameraSwitch);
+        miniCamera.gameObject.SetActive(!cameraSwitch);
     }
-
-    public void CloseMiniGame()
-    {
-        //close minigame
-    }
+    
 }
