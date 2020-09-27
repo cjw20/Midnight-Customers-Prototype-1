@@ -9,6 +9,8 @@ public class MopGooGame : MonoBehaviour
 
     GameObject gameMop; //instance of mop present ingame
 
+    public GameObject[] gooSpawns;
+
     public GameObject mopSpawn;
 
 
@@ -17,6 +19,10 @@ public class MopGooGame : MonoBehaviour
 
         gameMop = Instantiate(mop, mopSpawn.transform);
 
+        foreach(GameObject gooSpawn in gooSpawns)
+        {
+            Instantiate(goo, gooSpawn.transform);
+        }
         //instantiate neccessary objects
     }
 
