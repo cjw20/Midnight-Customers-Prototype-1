@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
 
     void SetPosition()
     {
-        if(gameControl.playerPos == null)
+        if(gameControl.playerPos == new Vector3 (0,0,0))
         {
             return; //if a position isn't set, stay in default position
         }
