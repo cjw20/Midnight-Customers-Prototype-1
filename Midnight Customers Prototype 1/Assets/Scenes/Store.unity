@@ -254,6 +254,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionName: Leave it alone
   nameText: Mysterious Slime
+  hasOptions: 0
+  conversationResult: Positive
   sentences:
   - Unsure how to react, you decide to leave the slime alone.
   options: []
@@ -287,6 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionName: Greet it kindly
   nameText: Mysterious Slime
+  hasOptions: 0
+  conversationResult: Positive
   sentences:
   - Although the slime does not reply to you, it appears to appreciate your kindness.
   options: []
@@ -304,6 +308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionName: Throw something at it
   nameText: Mysterious Slime
+  hasOptions: 0
+  conversationResult: Negative
   sentences:
   - Throwing something at it results in the slime getting upset as it begins to spew
     slime all over the place as it angirly leaves the store.
@@ -356,6 +362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionName: 
   nameText: Mysterious Slime
+  hasOptions: 1
+  conversationResult: 
   sentences:
   - 'As you approach this customer you see that it is a slime, one without arms,
     and a cute little face. The slime appears to be no threat other than the wet
@@ -364,7 +372,7 @@ MonoBehaviour:
   options:
   - {fileID: 111681992}
   - {fileID: 111681991}
-  - {fileID: 0}
+  - {fileID: 111681989}
 --- !u!114 &111681997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,7 +805,7 @@ MonoBehaviour:
   nameText: {fileID: 345570631}
   dialogueText: {fileID: 796114214}
   dialogueWindow: {fileID: 1824786873}
-  optionsWindow: {fileID: 0}
+  optionsWindow: {fileID: 510813503}
   optionButtons:
   - {fileID: 396657350}
   - {fileID: 511609133}

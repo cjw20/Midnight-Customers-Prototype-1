@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            if(thisDialogue.options == null)
+            if(thisDialogue.hasOptions == false)
             {
                 EndDialogue();
 
@@ -52,6 +52,7 @@ public class DialogueManager : MonoBehaviour
             else
             {
                 OpenOptions();
+                return;
             }
         }
 
@@ -70,10 +71,11 @@ public class DialogueManager : MonoBehaviour
             Text buttonText = optionButtons[i].transform.Find("Text").GetComponent<Text>();
 
             buttonText.text = option.optionName;
-            i++;
+           
             //will need to add code to handle options in numbers other than 3
 
             optionButtons[i].onClick.AddListener(delegate { OnOptionSelect(option); });
+            i++;
         }
     }
 
