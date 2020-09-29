@@ -10,9 +10,10 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public GameObject dialogueWindow;
 
-    public GameObject[] dialogueOptions;
+    Dialogue thisDialogue; //dialogue being used in conversation
 
     public GameObject optionsWindow;
+    public Button[] optionButtons;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class DialogueManager : MonoBehaviour
         sentences.Clear();
         Time.timeScale = 0; //pauses updates for objects in scene
 
-        dialogueOptions = dialogue.options;
+        thisDialogue = dialogue;
 
         dialogueWindow.SetActive(true);
 
@@ -41,19 +42,46 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            if(dialogueOptions.Length == 0)
+            if(thisDialogue.options == null)
             {
                 EndDialogue();
 
                 return;
             }
-            
-            
+
+            else
+            {
+                OpenOptions();
+            }
         }
 
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
 
+    }
+
+    void OpenOptions()
+    {
+        int i = 0; //counter for loop below
+        dialogueWindow.SetActive(false);
+        optionsWindow.SetActive(true);
+        foreach(Dialogue option in thisDialogue.options)
+        {
+            Text buttonText = optionButtons[i].transform.Find("Text").GetComponent<Text>();
+
+            buttonText.text = option.optionName;
+            i++;
+            //will need to add code to handle options in numbers other than 3
+
+            optionButtons[i].onClick.AddListener(delegate { OnOptionSelect(option); });
+        }
+    }
+
+    public void OnOptionSelect(Dialogue dialogue)
+    {
+        optionsWindow.SetActive(false);
+        StartDialogue(dialogue);
+       
     }
 
     void EndDialogue()
