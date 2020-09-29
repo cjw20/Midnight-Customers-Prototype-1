@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject optionsWindow;
     public Button[] optionButtons;
 
+    GameControl gameControl;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -89,7 +91,8 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialogueWindow.SetActive(false);
-
+        gameControl = GameObject.Find("Game Control").GetComponent<GameControl>();
+        gameControl.SetDialougeResult(thisDialogue.conversationResult);
         Time.timeScale = 1f;
 
     }

@@ -8,6 +8,8 @@ public class GameControl : MonoBehaviour
     public static GameControl control;
 
     public Vector3 playerPos; //position of player before scene change
+
+    public string dialogueResult; //result of most recent dialogue
     GameObject player;
     void Awake()
     {
@@ -22,6 +24,10 @@ public class GameControl : MonoBehaviour
         }
     }
 
+    public void SetDialougeResult(string result)
+    {
+        dialogueResult = result;
+    }
 
     public void LoadMiniGame(string gameName)
     {

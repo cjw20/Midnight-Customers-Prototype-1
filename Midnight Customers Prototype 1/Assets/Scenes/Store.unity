@@ -311,8 +311,8 @@ MonoBehaviour:
   hasOptions: 0
   conversationResult: Negative
   sentences:
-  - Throwing something at it results in the slime getting upset as it begins to spew
-    slime all over the place as it angirly leaves the store.
+  - Throwing something at it results in the slime getting visibly upset.  It begins
+    to spew slime all over the place as it angirly leaves the store.
   options: []
 --- !u!114 &111681994
 MonoBehaviour:
@@ -2933,6 +2933,10 @@ PrefabInstance:
       propertyPath: speed
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 577932516475701922, guid: 120327d102efbc04e868f6c83122463d, type: 3}
+      propertyPath: Exit
+      value: 
+      objectReference: {fileID: 1394746512}
     - target: {fileID: 577932516475701932, guid: 120327d102efbc04e868f6c83122463d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.6

@@ -17,6 +17,9 @@ public class CustomerMovement : MonoBehaviour
     public float timeToWait = 5f; //time for customer to chill at destination before moving to next one
     bool isWaiting;
 
+    public Transform Exit; //exit to store
+    bool wantsToLeave = false;
+
 
 
     void Start()
@@ -32,17 +35,36 @@ public class CustomerMovement : MonoBehaviour
         if (isWaiting)
             return;
 
+        
+
         if (!agent.pathPending && agent.remainingDistance < minDistance)
-            StartCoroutine("wait");
+        {
+            if (agent.destination == new Vector2 (Exit.position.x, Exit.position.y))
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            else
+            {
+                StartCoroutine("wait");
+            }
+        }
+            
             
     }
     void GoToNextPoint()
     {
-        
+        if(wantsToLeave == true)
+        {
+            agent.destination = Exit.position;
+            return;
+        }
 
         agent.destination = waypoints[destination].transform.position;
 
         destination = (destination + 1) % waypoints.Length;
+
+        
     }
 
     IEnumerator wait()
