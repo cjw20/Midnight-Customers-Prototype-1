@@ -17,6 +17,8 @@ public class CustomerMovement : MonoBehaviour
     public float timeToWait = 5f; //time for customer to chill at destination before moving to next one
     bool isWaiting;
 
+
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent2D>();
