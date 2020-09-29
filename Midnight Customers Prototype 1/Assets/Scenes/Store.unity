@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacaf08a2e9a4264db19b038d5b4b5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goo: {fileID: 0}
+  goo: {fileID: 2755712142832567532, guid: 57f0d6de553ff374d934300a688ee675, type: 3}
 --- !u!1 &187107422
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,48 +399,6 @@ Transform:
   m_Father: {fileID: 86966467}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &371766798 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2755712142832567532, guid: 57f0d6de553ff374d934300a688ee675, type: 3}
-  m_PrefabInstance: {fileID: 4078073482552993226}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &371766799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371766798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e19b5aa24c821142877f1907a0d7faa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Goo
-  canHold: 0
-  amount: 0
-  isMiniGameTrigger: 1
-  hasPrerequisite: 1
-  noPrereqMessage: Needs Mop
-  prerequisite: Mop
-  miniGame: MopMiniGame
-  gameControl: {fileID: 0}
---- !u!58 &371766802
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371766798}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,10 +1908,6 @@ PrefabInstance:
     - target: {fileID: 2755712142832567532, guid: 57f0d6de553ff374d934300a688ee675, type: 3}
       propertyPath: m_Name
       value: Goo
-      objectReference: {fileID: 0}
-    - target: {fileID: 2755712142832567532, guid: 57f0d6de553ff374d934300a688ee675, type: 3}
-      propertyPath: m_TagString
-      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f0d6de553ff374d934300a688ee675, type: 3}
