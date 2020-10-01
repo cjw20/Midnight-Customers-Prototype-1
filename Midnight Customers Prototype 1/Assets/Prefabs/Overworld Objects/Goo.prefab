@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1431253762053507666}
   - component: {fileID: 8233378263921155112}
+  - component: {fileID: 371766802}
+  - component: {fileID: 371766799}
   m_Layer: 0
   m_Name: Goo
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,3 +84,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &371766802
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755712142832567532}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
+--- !u!114 &371766799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755712142832567532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e19b5aa24c821142877f1907a0d7faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Goo
+  canHold: 0
+  amount: 0
+  isMiniGameTrigger: 1
+  hasPrerequisite: 1
+  noPrereqMessage: Needs Mop
+  prerequisite: Mop
+  miniGame: MopMiniGame
+  gameControl: {fileID: 0}

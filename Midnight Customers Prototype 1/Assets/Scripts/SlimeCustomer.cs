@@ -9,12 +9,17 @@ public class SlimeCustomer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("LeaveGoo", 2f, 10f);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void LeaveGoo()
+    {
+        Instantiate(goo,this.gameObject.transform.position, this.gameObject.transform.rotation);
     }
 }
