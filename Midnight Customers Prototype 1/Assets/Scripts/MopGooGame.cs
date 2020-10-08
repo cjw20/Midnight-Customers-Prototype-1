@@ -31,7 +31,8 @@ public class MopGooGame : MonoBehaviour
     {
         if(remainingGoo < 1)
         {
-            gc.LoadArea("Store");  //create not hard coded way later?
+            // gc.LoadArea("Store");  //create not hard coded way later?
+            Destroy(this.gameObject);
         }
     }
 

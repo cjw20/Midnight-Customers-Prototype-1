@@ -65,7 +65,7 @@ public class Goo : MonoBehaviour
         }
         if(collision.tag == "Boundary")
         {
-            rb.velocity = -rb.velocity;
+            rb.velocity = -rb.velocity;  //reverses velocity so that goo doesn't leave the minigame window
             movement = -movement;
             rb.AddForce(movement * moveSpeed * 3);
 
