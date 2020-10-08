@@ -12,8 +12,9 @@ public class Goo : MonoBehaviour
     public float directionTime = 1f; //time before goo changes directions
     float timeLeft; //used to see how much time has passed
 
-    public MopGooGame mgControl; 
+    public MopGooGame mgControl;
 
+    bool hitBoundary = false;
     Rigidbody2D rb;
     void Start()
     {
@@ -27,7 +28,7 @@ public class Goo : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime; 
-        if(timeLeft < 0)
+        if(timeLeft < 0 && !hitBoundary)
         {
             timeLeft += directionTime;
             movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)); //chooses a random direction for slime to move
@@ -62,6 +63,15 @@ public class Goo : MonoBehaviour
         {
             isBeingCleaned = true;
         }
+        if(collision.tag == "Boundary")
+        {
+            rb.velocity = -rb.velocity;
+            movement = -movement;
+            rb.AddForce(movement * moveSpeed * 3);
+
+
+            StartCoroutine("HitBoundary");
+        }
        
         
     }
@@ -72,5 +82,20 @@ public class Goo : MonoBehaviour
         {
             isBeingCleaned = false;
         }
+    }
+
+    IEnumerator HitBoundary()
+    {
+        if (hitBoundary)
+            yield break;  //ends coroutine if already started
+
+        //keeps goo turning right back around after hitting edge of minigame screen
+        hitBoundary = true;
+
+        yield return new WaitForSeconds(2f);
+
+        hitBoundary = false;
+
+        yield break;
     }
 }
