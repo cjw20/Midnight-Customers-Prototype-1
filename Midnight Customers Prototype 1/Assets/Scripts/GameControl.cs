@@ -29,12 +29,12 @@ public class GameControl : MonoBehaviour
         dialogueResult = result;
     }
 
-    public void LoadMiniGame(string gameName)
+    public void LoadMiniGame(GameObject miniGame)
     {
-        player = GameObject.FindWithTag("Player");
-        playerPos = player.transform.position; //saves players position so game knows where to put them on return to store area
+        //player = GameObject.FindWithTag("Player");
+        //playerPos = player.transform.position; //saves players position so game knows where to put them on return to store area
 
-        SceneManager.LoadScene(gameName);
+        Instantiate(miniGame);
         
         
     }

@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc234ab28a32840f5adfb84a075bc023, type: 3}
   m_Name: InkLibrary
   m_EditorClassIdentifier: 
-  inkLibrary:
-  - compileAutomatically: 0
-    inkAsset: {fileID: 0}
-    jsonAssetDirectory: {fileID: 0}
-    jsonAsset: {fileID: 0}
+  inkLibrary: []
   pendingCompilationStack:
   - Assets/Ink/Demos/Basic Demo/Ink/story.ink
   - Assets/Ink/Demos/Basic Demo/Ink/TestStory.ink

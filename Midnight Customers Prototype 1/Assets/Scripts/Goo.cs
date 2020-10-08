@@ -21,7 +21,7 @@ public class Goo : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         timeLeft = directionTime;
 
-        mgControl = GameObject.Find("Mop Goo MiniGame").GetComponent<MopGooGame>();
+        mgControl = GameObject.Find("Mop Goo MiniGame(Clone)").GetComponent<MopGooGame>();
     }
 
     // Update is called once per frame
@@ -47,8 +47,9 @@ public class Goo : MonoBehaviour
 
         if(timeCleaned > cleanTimeRequired)
         {
-            Destroy(this.gameObject); //destroys slime after a certain amount of time being cleaned
             mgControl.UpdateGooCount(-1); //tells game that there is one less slime present
+            Destroy(this.gameObject); //destroys slime after a certain amount of time being cleaned
+            
         }
        
     }

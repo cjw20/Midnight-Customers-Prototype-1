@@ -119,5 +119,5 @@ MonoBehaviour:
   hasPrerequisite: 1
   noPrereqMessage: Needs Mop
   prerequisite: Mop
-  miniGame: MopMiniGame
+  miniGame: {fileID: 5964932440297922082, guid: 99f3e5133f5e8a444a7216be2e47f81a, type: 3}
   gameControl: {fileID: 0}
