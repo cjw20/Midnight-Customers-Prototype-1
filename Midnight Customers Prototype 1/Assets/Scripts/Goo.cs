@@ -62,9 +62,12 @@ public class Goo : MonoBehaviour
     {
         if(collision.tag == "MiniGamePlayer")
         {
-            isBeingCleaned = true;
+
+            mgControl.UpdateGooCount(-1); //tells game that there is one less slime present
+            Destroy(this.gameObject); //destroys slime after a certain amount of time being cleaned
+
         }
-        if(collision.tag == "Boundary")
+        if (collision.tag == "Boundary")
         {
             rb.velocity = -rb.velocity;  //reverses velocity so that goo doesn't leave the minigame window
             movement = -movement;

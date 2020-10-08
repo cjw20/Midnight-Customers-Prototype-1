@@ -465,6 +465,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1433670997153713948}
     m_Modifications:
+    - target: {fileID: 1796082150, guid: 45902399ee6d98a4f9e865cf703863e1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796082150, guid: 45902399ee6d98a4f9e865cf703863e1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796082151, guid: 45902399ee6d98a4f9e865cf703863e1, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2005663472607822690, guid: 45902399ee6d98a4f9e865cf703863e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.64
@@ -512,6 +524,10 @@ PrefabInstance:
     - target: {fileID: 6280158712173847594, guid: 45902399ee6d98a4f9e865cf703863e1, type: 3}
       propertyPath: m_Name
       value: Mini Game Mop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547682736580376614, guid: 45902399ee6d98a4f9e865cf703863e1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45902399ee6d98a4f9e865cf703863e1, type: 3}
