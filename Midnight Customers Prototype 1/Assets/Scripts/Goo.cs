@@ -12,22 +12,23 @@ public class Goo : MonoBehaviour
     public float directionTime = 1f; //time before goo changes directions
     float timeLeft; //used to see how much time has passed
 
-    public MopGooGame mgControl; 
+    public MopGooGame mgControl;
 
+    bool hitBoundary = false;
     Rigidbody2D rb;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         timeLeft = directionTime;
 
-        mgControl = GameObject.Find("Mop Goo MiniGame").GetComponent<MopGooGame>();
+        mgControl = GameObject.Find("Mop Goo MiniGame(Clone)").GetComponent<MopGooGame>();
     }
 
     // Update is called once per frame
     void Update()
     {
         timeLeft -= Time.deltaTime; 
-        if(timeLeft < 0)
+        if(timeLeft < 0 && !hitBoundary)
         {
             timeLeft += directionTime;
             movement = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)); //chooses a random direction for slime to move
@@ -46,8 +47,9 @@ public class Goo : MonoBehaviour
 
         if(timeCleaned > cleanTimeRequired)
         {
-            Destroy(this.gameObject); //destroys slime after a certain amount of time being cleaned
             mgControl.UpdateGooCount(-1); //tells game that there is one less slime present
+            Destroy(this.gameObject); //destroys slime after a certain amount of time being cleaned
+            
         }
        
     }
@@ -60,7 +62,19 @@ public class Goo : MonoBehaviour
     {
         if(collision.tag == "MiniGamePlayer")
         {
-            isBeingCleaned = true;
+
+            mgControl.UpdateGooCount(-1); //tells game that there is one less slime present
+            Destroy(this.gameObject); //destroys slime after a certain amount of time being cleaned
+
+        }
+        if (collision.tag == "Boundary")
+        {
+            rb.velocity = -rb.velocity;  //reverses velocity so that goo doesn't leave the minigame window
+            movement = -movement;
+            rb.AddForce(movement * moveSpeed * 3);
+
+
+            StartCoroutine("HitBoundary");
         }
        
         
@@ -72,5 +86,20 @@ public class Goo : MonoBehaviour
         {
             isBeingCleaned = false;
         }
+    }
+
+    IEnumerator HitBoundary()
+    {
+        if (hitBoundary)
+            yield break;  //ends coroutine if already started
+
+        //keeps goo turning right back around after hitting edge of minigame screen
+        hitBoundary = true;
+
+        yield return new WaitForSeconds(2f);
+
+        hitBoundary = false;
+
+        yield break;
     }
 }
