@@ -9,13 +9,16 @@ public class InkExample : MonoBehaviour
     public TextAsset inkJSONAsset;
     private Story story;
     public Button buttonPrefab;
+    public Canvas canvas;
 
+    
     // Start is called before the first frame update
     void Start()
     {
         // Load the next story block
         story = new Story(inkJSONAsset.text);
 
+        
         // Start the refresh cycle
         refresh();
 
@@ -71,7 +74,12 @@ public class InkExample : MonoBehaviour
     // Clear out all of the UI, calling Destory() in reverse
     void clearUI()
     {
-       //remove child objects (dialogue choices)
+        int childCount = canvas.transform.childCount;
+        for (int i = childCount - 1; i >= 0; --i)
+        {
+            GameObject.Destroy(canvas.transform.GetChild(i).gameObject);
+        }
+        
     }
 
 
