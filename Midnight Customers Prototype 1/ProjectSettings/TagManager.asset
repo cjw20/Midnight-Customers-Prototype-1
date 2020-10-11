@@ -9,6 +9,7 @@ TagManager:
   - MiniGamePlayer
   - Destination
   - Boundary
+  - Checkout Item
   layers:
   - Default
   - TransparentFX
