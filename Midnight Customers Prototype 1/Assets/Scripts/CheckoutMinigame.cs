@@ -23,4 +23,18 @@ public class CheckoutMinigame : MonoBehaviour
     {
         
     }
+
+    public void UpdatePrice(float cost)
+    {
+        //update price when object gets scanned
+    }
+
+    public void UpdateItemCount()
+    {
+        itemNumber--;
+        if(itemNumber < 1)
+        {
+            Destroy(this.gameObject); //ends game when all items have been bagged
+        }
+    }
 }
