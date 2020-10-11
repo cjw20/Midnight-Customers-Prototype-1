@@ -202,58 +202,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6872077, y: 3.2870226}
   m_EdgeRadius: 0
---- !u!1 &85352978 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 70789467137331464, guid: 5618da706df5d2f4ea42f35a030e135c, type: 3}
-  m_PrefabInstance: {fileID: 3362749279889893136}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &85352979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85352978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e19b5aa24c821142877f1907a0d7faa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Stockable Shelf
-  canHold: 0
-  amount: 0
-  isMiniGameTrigger: 0
-  hasPrerequisite: 0
-  noPrereqMessage: 
-  prerequisite: 
-  miniGame: {fileID: 4431020545154715079, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-  gameControl: {fileID: 0}
---- !u!61 &85352980
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85352978}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
 --- !u!1 &86966466
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +233,7 @@ Transform:
   - {fileID: 1186142416}
   - {fileID: 302061602}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &111681988 stripped
 GameObject:
@@ -874,7 +822,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &510813503
 GameObject:
@@ -3077,7 +3025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2858795367965632987, guid: 6ec6a2038433951448eb7f2d833e2ac5, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2858795367965632987, guid: 6ec6a2038433951448eb7f2d833e2ac5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3093,67 +3041,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ec6a2038433951448eb7f2d833e2ac5, type: 3}
---- !u!1001 &1380459602449414886
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4431020545154715079, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_Name
-      value: Shelf Minigame
-      objectReference: {fileID: 0}
-    - target: {fileID: 4431020545154715079, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6510097042706874400, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 475f768b6a77fdb46af3ad0c5d5ab0ef, type: 3}
 --- !u!1001 &1882203936657903669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3250,17 +3137,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 85352979, guid: 5618da706df5d2f4ea42f35a030e135c, type: 3}
+      propertyPath: isMiniGameTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 70789467137331464, guid: 5618da706df5d2f4ea42f35a030e135c, type: 3}
       propertyPath: m_Name
       value: Stockable Shelf
       objectReference: {fileID: 0}
-    - target: {fileID: 70789467137331464, guid: 5618da706df5d2f4ea42f35a030e135c, type: 3}
-      propertyPath: m_TagString
-      value: Interactable
-      objectReference: {fileID: 0}
     - target: {fileID: 5748677541925788737, guid: 5618da706df5d2f4ea42f35a030e135c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.23
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 5748677541925788737, guid: 5618da706df5d2f4ea42f35a030e135c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3345,7 +3232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5565836167349574751, guid: 34df5b935e815d24ea17bf26aa0513c4, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5565836167349574751, guid: 34df5b935e815d24ea17bf26aa0513c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
