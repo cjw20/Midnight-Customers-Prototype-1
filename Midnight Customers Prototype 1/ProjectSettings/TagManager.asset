@@ -11,6 +11,7 @@ TagManager:
   - Boundary
   - Checkout Item
   - Bag
+  - Scanner
   layers:
   - Default
   - TransparentFX
