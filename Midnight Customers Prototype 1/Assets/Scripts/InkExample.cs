@@ -62,6 +62,8 @@ public class InkExample : MonoBehaviour
             });
 
         }
+
+        //if no choices/story over next/end button goes here
     }
 
     // When we click the choice button, tell the story to choose that choice!
@@ -74,10 +76,11 @@ public class InkExample : MonoBehaviour
     // Clear out all of the UI, calling Destory() in reverse
     void clearUI()
     {
+        //will need to make a way that only destroys parts of UI it needs to later (back panel)
         int childCount = canvas.transform.childCount;
         for (int i = childCount - 1; i >= 0; --i)
         {
-            GameObject.Destroy(canvas.transform.GetChild(i).gameObject);
+            GameObject.Destroy(canvas.transform.GetChild(i).gameObject); 
         }
         
     }
