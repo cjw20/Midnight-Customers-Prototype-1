@@ -11,6 +11,7 @@ public class InkExample : MonoBehaviour
     public Button buttonPrefab;
     public Canvas canvas;
 
+    public GameObject textWindow; 
     
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class InkExample : MonoBehaviour
         // Load the next story block
         story = new Story(inkJSONAsset.text);
 
-        
+        textWindow.SetActive(true);
         // Start the refresh cycle
         refresh();
 
@@ -33,6 +34,7 @@ public class InkExample : MonoBehaviour
         // Clear the UI
         clearUI();
 
+        
         // Create a new GameObject
         GameObject newGameObject = new GameObject("TextChunk");
         // Set its transform to the Canvas (this)
@@ -62,7 +64,7 @@ public class InkExample : MonoBehaviour
             });
 
         }
-
+        
         //if no choices/story over next/end button goes here
     }
 
