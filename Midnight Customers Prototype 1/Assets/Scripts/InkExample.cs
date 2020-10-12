@@ -18,6 +18,7 @@ public class InkExample : MonoBehaviour
     {
         // Load the next story block
         story = new Story(inkJSONAsset.text);
+        
 
         textWindow.SetActive(true);
         // Start the refresh cycle
@@ -76,6 +77,8 @@ public class InkExample : MonoBehaviour
     {
         yield return new WaitForSeconds(2f); //waits for a few seconds before closing dialogue
 
+        //get changes to game variables here
+        
         textWindow.SetActive(false);
         this.gameObject.SetActive(false);
 

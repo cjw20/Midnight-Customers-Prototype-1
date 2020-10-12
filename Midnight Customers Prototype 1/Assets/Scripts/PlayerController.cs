@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         {
             if (nearCustomer)
             {
-                closestCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
+              //  closestCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
             }
             
             else if(currentInteraction != null)   //prioritizes customers over items, may need to change how this works later
