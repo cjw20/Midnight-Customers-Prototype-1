@@ -49,8 +49,10 @@ public class InkExample : MonoBehaviour
         // Load Arial from the built-in resources
         newTextObject.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf") as Font;
 
+        int choiceNumber = 0; //number of choices for current dialogue
         foreach (Choice choice in story.currentChoices)
         {
+            choiceNumber++;
             Button choiceButton = Instantiate(buttonPrefab) as Button;
             choiceButton.transform.SetParent(this.transform, false);
 
@@ -64,10 +66,21 @@ public class InkExample : MonoBehaviour
             });
 
         }
-        
+        if(choiceNumber == 0)
+        {
+            StartCoroutine("EndDialogue");
+        }
         //if no choices/story over next/end button goes here
     }
+    IEnumerator EndDialogue()
+    {
+        yield return new WaitForSeconds(2f); //waits for a few seconds before closing dialogue
 
+        textWindow.SetActive(false);
+        this.gameObject.SetActive(false);
+
+        yield break;
+    }
     // When we click the choice button, tell the story to choose that choice!
     void OnClickChoiceButton(Choice choice)
     {
