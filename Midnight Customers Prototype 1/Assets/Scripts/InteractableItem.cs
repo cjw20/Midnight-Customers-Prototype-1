@@ -13,7 +13,7 @@ public class InteractableItem : MonoBehaviour
     public string prerequisite; //name of requirement for interaction ex. Mop
 
     
-    public string miniGame; //minigame that will be triggered
+    public GameObject miniGame; //minigame that will be triggered
     public GameObject gameControl;
     GameControl gc;
     
@@ -37,6 +37,7 @@ public class InteractableItem : MonoBehaviour
             gc = gameControl.GetComponent<GameControl>();
 
             gc.LoadMiniGame(miniGame);
+            Destroy(this.gameObject);
 
             
 
