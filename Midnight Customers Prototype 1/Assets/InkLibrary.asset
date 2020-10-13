@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: InkLibrary
   m_EditorClassIdentifier: 
   inkLibrary: []
-  pendingCompilationStack:
-  - Assets/Ink/Demos/Basic Demo/Ink/story.ink
-  - Assets/Ink/Demos/Basic Demo/Ink/TestStory.ink
+  pendingCompilationStack: []
   compilationStack: []
