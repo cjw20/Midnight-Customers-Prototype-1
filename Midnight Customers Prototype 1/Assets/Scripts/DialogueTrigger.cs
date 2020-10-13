@@ -14,9 +14,9 @@ public class DialogueTrigger : MonoBehaviour
         {
             inkManager = GameObject.Find("Dialogue Canvas").GetComponent<InkExample>();
         }
-        
+       
 
-        if(numberOfInteractions > conversations.Length)
+        if(numberOfInteractions >= conversations.Length)
         {
             return; //don't show dialogue if there aren't any left. could have default message here
         }
