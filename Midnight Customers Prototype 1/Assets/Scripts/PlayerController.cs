@@ -115,5 +115,7 @@ public class PlayerController : MonoBehaviour
         }
 
         this.gameObject.transform.position = gameControl.playerPos;
+
+        //won't need this if we stay in gas station scene
     }
 }

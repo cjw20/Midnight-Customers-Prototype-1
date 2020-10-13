@@ -10,8 +10,11 @@ public class DialogueTrigger : MonoBehaviour
     int numberOfInteractions = 0; //how many times the interaction has occured so that the right dialogue is chosen.
     public void TriggerDialogue()
     {
-
-        inkManager = GameObject.Find("Dialogue Canvas").GetComponent<InkExample>();
+        if(inkManager == null)
+        {
+            inkManager = GameObject.Find("Dialogue Canvas").GetComponent<InkExample>();
+        }
+        
 
         if(numberOfInteractions > conversations.Length)
         {

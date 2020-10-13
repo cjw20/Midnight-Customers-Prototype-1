@@ -86,7 +86,7 @@ public class InkExample : MonoBehaviour
         //get changes to game variables here
         
         textWindow.SetActive(false);
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
 
         yield break;
     }
