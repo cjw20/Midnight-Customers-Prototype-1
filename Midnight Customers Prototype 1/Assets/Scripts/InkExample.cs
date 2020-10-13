@@ -16,14 +16,20 @@ public class InkExample : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
+
+    }
+
+    public void SetDialogue(TextAsset dialogue)
+    {
+        inkJSONAsset = dialogue;
         // Load the next story block
         story = new Story(inkJSONAsset.text);
-        
+
 
         textWindow.SetActive(true);
         // Start the refresh cycle
         refresh();
-
     }
 
     // Refresh the UI elements

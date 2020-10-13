@@ -240,6 +240,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 577932516475701920, guid: 120327d102efbc04e868f6c83122463d, type: 3}
   m_PrefabInstance: {fileID: 577932516431145828}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &111681989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111681988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19e992c1e7d89e43a0820c30a677214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversations:
+  - {fileID: 4900000, guid: c1da0602e2394a747b19ff41299f85a4, type: 3}
+  inkManager: {fileID: 0}
 --- !u!70 &111681990
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
