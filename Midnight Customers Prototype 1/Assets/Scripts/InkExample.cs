@@ -84,9 +84,9 @@ public class InkExample : MonoBehaviour
         yield return new WaitForSeconds(2f); //waits for a few seconds before closing dialogue
 
         //get changes to game variables here
-        
+        clearUI();
         textWindow.SetActive(false);
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
 
         yield break;
     }
