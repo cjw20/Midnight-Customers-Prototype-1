@@ -8,6 +8,8 @@ public class DialogueTrigger : MonoBehaviour
     public TextAsset[] conversations;
     public InkExample inkManager;
     int numberOfInteractions = 0; //how many times the interaction has occured so that the right dialogue is chosen.
+
+    public int causedStress;
     public void TriggerDialogue()
     {
         if(inkManager == null)

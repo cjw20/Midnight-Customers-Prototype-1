@@ -20,7 +20,7 @@ public class CustomerMovement : MonoBehaviour
     public Transform Exit; //exit to store
     bool wantsToLeave = false;
 
-    public int causedStress = -25; //stress caused by interacting with customer
+   // public int causedStress = -25; //stress caused by interacting with customer
 
 
 

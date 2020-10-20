@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     int maxStress = 100;
     int sanity = 0;
 
+   // CustomerMovement customerScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,8 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             if (nearCustomer)
             {
+                
                 closestCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
-                UpdateStress(closestCustomer.GetComponent<CustomerMovement>().causedStress); //make more efficent later
+                UpdateStress(closestCustomer.GetComponent<DialogueTrigger>().causedStress); //make more efficent later
+
             }
             
             else if(currentInteraction != null)   //prioritizes customers over items, may need to change how this works later
@@ -98,6 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             nearCustomer = true;
             closestCustomer = other.gameObject;
+          //  customerScript = closestCustomer.GetComponent<CustomerMovement>();
 
         }
     }
