@@ -92,13 +92,13 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Interactable")
+        if(other.CompareTag("Interactable"))
         {
             currentInteraction = other.gameObject;
             itemScript = currentInteraction.GetComponent<InteractableItem>();
         }
 
-        if(other.tag == "Customer")
+        if(other.CompareTag("Customer"))
         {
             nearCustomer = true;
             closestCustomer = other.gameObject;
@@ -110,12 +110,12 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
 
-        if (other.tag == "Interactable")
+        if (other.CompareTag("Interactable"))
         {
             currentInteraction = null;
             itemScript = null;
         }
-        if (other.tag == "Customer")
+        if (other.CompareTag("Customer"))
         {
             nearCustomer = false;
             closestCustomer = null;  //resets variable so that player can no longer interact after leaving trigger area
