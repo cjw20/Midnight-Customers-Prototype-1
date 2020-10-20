@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,12 +20,19 @@ public class PlayerController : MonoBehaviour
 
     GameControl gameControl;
 
+    public Slider stressSlider;
+
+    int currentStress = 100;
+    int maxStress = 100;
+    int sanity = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         inventoryManager = GetComponent<InventoryManager>();
         gameControl = GameObject.Find("Game Control").GetComponent<GameControl>();
         SetPosition();
+        SetStress();
     }
 
     // Update is called once per frame
@@ -39,6 +47,7 @@ public class PlayerController : MonoBehaviour
             if (nearCustomer)
             {
                 closestCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
+                UpdateStress(closestCustomer.GetComponent<CustomerMovement>().causedStress); //make more efficent later
             }
             
             else if(currentInteraction != null)   //prioritizes customers over items, may need to change how this works later
@@ -59,7 +68,9 @@ public class PlayerController : MonoBehaviour
 
                 else if (itemScript.isMiniGameTrigger)
                 {
+                    UpdateStress(itemScript.causedStress);
                     itemScript.StartInteraction();
+                    
                     //trigger minigame
                 }
 
@@ -117,5 +128,24 @@ public class PlayerController : MonoBehaviour
         this.gameObject.transform.position = gameControl.playerPos;
 
         //won't need this if we stay in gas station scene
+    }
+
+    public void SetStress()
+    {
+        stressSlider.maxValue = maxStress;
+        stressSlider.value = currentStress;
+
+    }
+
+    public void UpdateStress(int stressChange)
+    {
+        currentStress += stressChange;
+        if(currentStress < 0)
+        {
+            sanity += currentStress; //excess stress is added to sanity
+            currentStress = 0;
+
+        }
+        stressSlider.value = currentStress;
     }
 }
