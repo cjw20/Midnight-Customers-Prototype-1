@@ -63,7 +63,7 @@ public class CheckoutItem : MonoBehaviour
                 //update price
             }
         }
-        if(collision.tag == "Scanner")
+        if(collision.CompareTag("Scanner"))
         {
             if (!isScanned)
             {
