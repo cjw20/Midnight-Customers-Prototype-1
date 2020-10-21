@@ -12,6 +12,7 @@ public class InteractableItem : MonoBehaviour
     public string noPrereqMessage; //message shown to player if they dont have proper prerequisite fullfilled
     public string prerequisite; //name of requirement for interaction ex. Mop
 
+    public int causedStress; //amount of stress caused by interaction
     
     public GameObject miniGame; //minigame that will be triggered
     public GameObject gameControl;

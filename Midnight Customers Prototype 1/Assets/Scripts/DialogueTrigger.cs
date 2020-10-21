@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
+    
+    public TextAsset[] conversations;
+    public InkExample inkManager;
+    int numberOfInteractions = 0; //how many times the interaction has occured so that the right dialogue is chosen.
 
+    public int causedStress;
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        if(inkManager == null)
+        {
+            inkManager = GameObject.Find("Dialogue Canvas").GetComponent<InkExample>();
+        }
+       
+
+        if(numberOfInteractions >= conversations.Length)
+        {
+            return; //don't show dialogue if there aren't any left. could have default message here
+        }
+        inkManager.SetDialogue(conversations[numberOfInteractions]);
+        numberOfInteractions++;
     }
 }

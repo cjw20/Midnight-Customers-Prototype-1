@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,12 +20,21 @@ public class PlayerController : MonoBehaviour
 
     GameControl gameControl;
 
+    public Slider stressSlider;
+
+    int currentStress = 100;
+    int maxStress = 100;
+    int sanity = 0;
+
+   // CustomerMovement customerScript;
+
     // Start is called before the first frame update
     void Start()
     {
         inventoryManager = GetComponent<InventoryManager>();
         gameControl = GameObject.Find("Game Control").GetComponent<GameControl>();
         SetPosition();
+        SetStress();
     }
 
     // Update is called once per frame
@@ -38,7 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             if (nearCustomer)
             {
+                
                 closestCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
+                UpdateStress(closestCustomer.GetComponent<DialogueTrigger>().causedStress); //make more efficent later
+
             }
             
             else if(currentInteraction != null)   //prioritizes customers over items, may need to change how this works later
@@ -59,7 +72,9 @@ public class PlayerController : MonoBehaviour
 
                 else if (itemScript.isMiniGameTrigger)
                 {
+                    UpdateStress(itemScript.causedStress);
                     itemScript.StartInteraction();
+                    
                     //trigger minigame
                 }
 
@@ -77,16 +92,17 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Interactable")
+        if(other.CompareTag("Interactable"))
         {
             currentInteraction = other.gameObject;
             itemScript = currentInteraction.GetComponent<InteractableItem>();
         }
 
-        if(other.tag == "Customer")
+        if(other.CompareTag("Customer"))
         {
             nearCustomer = true;
             closestCustomer = other.gameObject;
+          //  customerScript = closestCustomer.GetComponent<CustomerMovement>();
 
         }
     }
@@ -94,12 +110,12 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
 
-        if (other.tag == "Interactable")
+        if (other.CompareTag("Interactable"))
         {
             currentInteraction = null;
             itemScript = null;
         }
-        if (other.tag == "Customer")
+        if (other.CompareTag("Customer"))
         {
             nearCustomer = false;
             closestCustomer = null;  //resets variable so that player can no longer interact after leaving trigger area
@@ -115,5 +131,26 @@ public class PlayerController : MonoBehaviour
         }
 
         this.gameObject.transform.position = gameControl.playerPos;
+
+        //won't need this if we stay in gas station scene
+    }
+
+    public void SetStress()
+    {
+        stressSlider.maxValue = maxStress;
+        stressSlider.value = currentStress;
+
+    }
+
+    public void UpdateStress(int stressChange)
+    {
+        currentStress += stressChange;
+        if(currentStress < 0)
+        {
+            sanity += currentStress; //excess stress is added to sanity
+            currentStress = 0;
+
+        }
+        stressSlider.value = currentStress;
     }
 }

@@ -280,7 +280,7 @@ namespace Ink.UnityIntegration {
 					return inkFile;
 				}
 			}
-			Debug.LogWarning (file + " missing from ink library. Please rebuild.");
+			//Debug.LogWarning (file + " missing from ink library. Please rebuild.");
 			return null;
 		}
 
