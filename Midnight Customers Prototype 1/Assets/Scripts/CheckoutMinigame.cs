@@ -26,12 +26,24 @@ public class CheckoutMinigame : MonoBehaviour
     public Text nameText; //name to display for customer
     public Text message; //what customer is saying
     public GameObject[] responseButtons;
+    public Text[] responseText;
 
     void Start()
     {
         customerInfo = customer.GetComponent<CustomerInfo>();
+
+        nameText.text = customerInfo.name;
+        message.text = customerInfo.greetingMessage;
+
+        int i = 0; // variable for counting in loops 
+        foreach(string response in customerInfo.greetingResponses)
+        {
+            responseText[i].text = response;
+            i++;
+        }
+
         boughtItems = customerInfo.boughtItems;
-        int i = 0;
+        i = 0;
         foreach(GameObject item in boughtItems)
         {
             Instantiate(item, itemSpawns[i].transform);
@@ -40,6 +52,8 @@ public class CheckoutMinigame : MonoBehaviour
         }
 
         portraitLocation.sprite = customerInfo.portrait;
+
+        //put some of these in separate functions later^
     }
 
     // Update is called once per frame

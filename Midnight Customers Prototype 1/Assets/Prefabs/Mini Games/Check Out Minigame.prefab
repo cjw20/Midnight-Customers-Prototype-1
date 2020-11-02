@@ -356,7 +356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 244.39, y: -44.2}
+  m_AnchoredPosition: {x: 244.39001, y: -44.19995}
   m_SizeDelta: {x: 439.96393, y: 65.956535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7688153423759080936
@@ -753,6 +753,9 @@ MonoBehaviour:
   responseButtons:
   - {fileID: 180145110825852047}
   - {fileID: 299218012723310407}
+  responseText:
+  - {fileID: 4374049980675275870}
+  - {fileID: 5564258440743171098}
 --- !u!1 &3104986507026663632
 GameObject:
   m_ObjectHideFlags: 0
