@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CheckoutItem : MonoBehaviour
 {
+
+
      
     bool isHeld = false;
     float startPosX;
@@ -12,6 +14,7 @@ public class CheckoutItem : MonoBehaviour
     CheckoutMinigame mgControl; 
 
     public float price; //price of item to be displayed on register
+    public string itemName; //name of item
 
     public bool isScanned = false; //whether or not the item has been scanned and is ready to be bagged
     // Start is called before the first frame update
