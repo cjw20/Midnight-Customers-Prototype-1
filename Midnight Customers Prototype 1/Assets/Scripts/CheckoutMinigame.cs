@@ -6,6 +6,9 @@ public class CheckoutMinigame : MonoBehaviour
 {
     public GameObject[] itemSpawns; //where check out items will appear\
     public GameObject checkoutItem; //item that will be checked out. Can add variation later 
+    GameObject[] boughtItems;
+
+    public SpriteRenderer portraitLocation;
 
     public GameObject customer;
     CustomerInfo customerInfo;
@@ -15,12 +18,16 @@ public class CheckoutMinigame : MonoBehaviour
     void Start()
     {
         customerInfo = customer.GetComponent<CustomerInfo>();
-
-        foreach(GameObject itemspawn in itemSpawns)
+        boughtItems = customerInfo.boughtItems;
+        int i = 0;
+        foreach(GameObject item in boughtItems)
         {
-            Instantiate(checkoutItem, itemspawn.transform);
+            Instantiate(item, itemSpawns[i].transform);
             itemNumber++;
+            i++;
         }
+
+        portraitLocation.sprite = customerInfo.portrait;
     }
 
     // Update is called once per frame

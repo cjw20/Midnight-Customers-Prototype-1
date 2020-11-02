@@ -62,8 +62,7 @@ public class CheckoutItem : MonoBehaviour
             {
                 mgControl.UpdateItemCount();
                 Destroy(this.gameObject);
-                //tell game that it is scanned
-                //update price
+                
             }
         }
         if(collision.CompareTag("Scanner"))

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1592282883264916338}
   - component: {fileID: 1592282883264916341}
   - component: {fileID: 1592282883264916340}
+  - component: {fileID: 6947927648473479143}
   m_Layer: 0
   m_Name: Deep One Customer
   m_TagString: Customer
@@ -118,3 +119,29 @@ MonoBehaviour:
   - {fileID: 4900000, guid: c67f7fbf2db5a19418132cc6666b399b, type: 3}
   inkManager: {fileID: 0}
   causedStress: -25
+--- !u!114 &6947927648473479143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592282883264916343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a499980cdb30074e9da45a6eca8bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerName: Carl
+  boughtItems:
+  - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
+  - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
+  - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
+  portrait: {fileID: -7776943700517180045, guid: 56b53d35711fcde408b1a25cacb98bd8, type: 3}
+  greetingMessage: Howdy partner
+  greetingResponses:
+  - Howdy there
+  - ...
+  goodbyeMessage: Thanks
+  goodbyeResponses:
+  - You're welcome!
+  - ...
