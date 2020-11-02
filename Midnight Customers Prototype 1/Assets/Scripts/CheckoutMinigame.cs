@@ -13,6 +13,9 @@ public class CheckoutMinigame : MonoBehaviour
     public GameObject customer;
     CustomerInfo customerInfo;
 
+    bool itemsBagged = false; //set to true once all items have been bagged
+    bool dialogueFinished = false; //true when conversation is finished
+
     int itemNumber; //number of items being checked out
     // Start is called before the first frame update
     void Start()
@@ -46,7 +49,17 @@ public class CheckoutMinigame : MonoBehaviour
         itemNumber--;
         if(itemNumber < 1)
         {
-            Destroy(this.gameObject); //ends game when all items have been bagged
+            itemsBagged = true;
+            FinishCheckout();
+        }
+    }
+
+    void FinishCheckout()
+    {
+        if(itemsBagged && dialogueFinished)
+        {
+            //display goodbye message
+            Destroy(this.gameObject); //end minigame
         }
     }
 }
