@@ -5,8 +5,6 @@ using UnityEngine;
 public class CheckoutItem : MonoBehaviour
 {
 
-
-     
     bool isHeld = false;
     float startPosX;
     float startPosY;

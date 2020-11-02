@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class CheckoutMinigame : MonoBehaviour
 {
@@ -18,6 +20,13 @@ public class CheckoutMinigame : MonoBehaviour
 
     int itemNumber; //number of items being checked out
     // Start is called before the first frame update
+
+
+    public GameObject dialogueWindow;
+    public Text nameText; //name to display for customer
+    public Text message; //what customer is saying
+    public GameObject[] responseButtons;
+
     void Start()
     {
         customerInfo = customer.GetComponent<CustomerInfo>();

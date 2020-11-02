@@ -14,5 +14,7 @@ public class CustomerInfo : MonoBehaviour
     public string goodbyeMessage;
     public string[] goodbyeResponses;
 
+    public int conversationLength; //how many lines customer has
+
 
 }
