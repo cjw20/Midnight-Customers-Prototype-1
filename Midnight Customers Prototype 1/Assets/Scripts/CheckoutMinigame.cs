@@ -81,6 +81,7 @@ public class CheckoutMinigame : MonoBehaviour
     {
         if(itemsBagged && dialogueFinished)
         {
+            //move to pay phase?
             //display goodbye message
             Destroy(this.gameObject); //end minigame
         }
