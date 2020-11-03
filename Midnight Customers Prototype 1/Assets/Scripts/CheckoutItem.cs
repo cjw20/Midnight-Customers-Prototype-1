@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckoutItem : MonoBehaviour
 {
-     
+
     bool isHeld = false;
     float startPosX;
     float startPosY;
@@ -12,6 +12,7 @@ public class CheckoutItem : MonoBehaviour
     CheckoutMinigame mgControl; 
 
     public float price; //price of item to be displayed on register
+    public string itemName; //name of item
 
     public bool isScanned = false; //whether or not the item has been scanned and is ready to be bagged
     // Start is called before the first frame update
@@ -59,8 +60,7 @@ public class CheckoutItem : MonoBehaviour
             {
                 mgControl.UpdateItemCount();
                 Destroy(this.gameObject);
-                //tell game that it is scanned
-                //update price
+                
             }
         }
         if(collision.CompareTag("Scanner"))
