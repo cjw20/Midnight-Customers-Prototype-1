@@ -83,6 +83,7 @@ public class CheckoutMinigame : MonoBehaviour
         {
             //move to pay phase?
             //display goodbye message
+            //set customer checked out to true so that it will leave after done
             Destroy(this.gameObject); //end minigame
         }
     }
