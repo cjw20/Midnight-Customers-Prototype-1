@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
     int maxStress = 100;
     int sanity = 0;
 
-   // CustomerMovement customerScript;
+    public CheckoutTrigger checkoutTrigger;
+    bool nearCheckout = false;
 
     // Start is called before the first frame update
     void Start()
@@ -105,6 +106,10 @@ public class PlayerController : MonoBehaviour
           //  customerScript = closestCustomer.GetComponent<CustomerMovement>();
 
         }
+        if (other.CompareTag("Checkout"))
+        {
+            nearCheckout = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -120,6 +125,10 @@ public class PlayerController : MonoBehaviour
             nearCustomer = false;
             closestCustomer = null;  //resets variable so that player can no longer interact after leaving trigger area
 
+        }
+        if (other.CompareTag("Checkout"))
+        {
+            nearCheckout = false;
         }
     }
 

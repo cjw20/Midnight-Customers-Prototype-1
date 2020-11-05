@@ -54,7 +54,7 @@ public class CheckoutItem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Bag")
+        if(collision.CompareTag("Bag"))
         {
             if (isScanned)
             {
