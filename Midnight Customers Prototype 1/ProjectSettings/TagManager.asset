@@ -12,6 +12,7 @@ TagManager:
   - Checkout Item
   - Bag
   - Scanner
+  - Counter
   layers:
   - Default
   - TransparentFX

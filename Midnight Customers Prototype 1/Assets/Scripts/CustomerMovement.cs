@@ -81,7 +81,7 @@ public class CustomerMovement : MonoBehaviour
         yield break;
     }
 
-    public void finishedCheckout()
+    public void FinishedCheckout()
     {
         //call from MG script after completion
         isWaiting = false;

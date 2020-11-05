@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E))
         {
+            if (nearCheckout && checkoutTrigger.customerNear)
+            {
+                checkoutTrigger.StartCheckout();
+            }
+
             if (nearCustomer)
             {
                 
@@ -79,7 +84,7 @@ public class PlayerController : MonoBehaviour
                     //trigger minigame
                 }
 
-                //if neither???
+               
 
             }
            
@@ -106,7 +111,7 @@ public class PlayerController : MonoBehaviour
           //  customerScript = closestCustomer.GetComponent<CustomerMovement>();
 
         }
-        if (other.CompareTag("Checkout"))
+        if (other.CompareTag("Counter"))
         {
             nearCheckout = true;
         }
@@ -126,7 +131,7 @@ public class PlayerController : MonoBehaviour
             closestCustomer = null;  //resets variable so that player can no longer interact after leaving trigger area
 
         }
-        if (other.CompareTag("Checkout"))
+        if (other.CompareTag("Counter"))
         {
             nearCheckout = false;
         }
