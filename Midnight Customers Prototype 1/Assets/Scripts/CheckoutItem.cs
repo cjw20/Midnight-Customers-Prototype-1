@@ -15,7 +15,7 @@ public class CheckoutItem : MonoBehaviour
     public string itemName; //name of item
 
     public bool isScanned = false; //whether or not the item has been scanned and is ready to be bagged
-    // Start is called before the first frame update
+    
     void Start()
     {
         mgControl = GameObject.Find("Check Out Minigame(Clone)").GetComponent<CheckoutMinigame>();

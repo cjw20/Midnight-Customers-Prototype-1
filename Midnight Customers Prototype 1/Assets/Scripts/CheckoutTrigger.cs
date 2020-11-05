@@ -34,6 +34,7 @@ public class CheckoutTrigger : MonoBehaviour
 
     public void EndCheckout()
     {
+        customer.GetComponent<CustomerMovement>().FinishedCheckout(); //tells customer to leave after checking out
         Destroy(thisCheckout);
     }
 }

@@ -50,13 +50,14 @@ public class PlayerController : MonoBehaviour
             if (nearCheckout && checkoutTrigger.customerNear)
             {
                 checkoutTrigger.StartCheckout();
+                return;
             }
 
             if (nearCustomer)
             {
                 
-                closestCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
-                UpdateStress(closestCustomer.GetComponent<DialogueTrigger>().causedStress); //make more efficent later
+                //closestCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
+                //UpdateStress(closestCustomer.GetComponent<DialogueTrigger>().causedStress); //make more efficent later
 
             }
             
@@ -108,7 +109,7 @@ public class PlayerController : MonoBehaviour
         {
             nearCustomer = true;
             closestCustomer = other.gameObject;
-          //  customerScript = closestCustomer.GetComponent<CustomerMovement>();
+          
 
         }
         if (other.CompareTag("Counter"))
