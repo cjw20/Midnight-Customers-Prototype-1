@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1592282883264916339}
   - component: {fileID: 1592282883264916338}
   - component: {fileID: 1592282883264916341}
-  - component: {fileID: 1592282883264916340}
   - component: {fileID: 6947927648473479143}
+  - component: {fileID: 1467547502}
+  - component: {fileID: 1467547508}
   m_Layer: 0
   m_Name: Deep One Customer
   m_TagString: Customer
@@ -98,27 +99,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.027373753, y: -0.17838927}
-  m_Size: {x: 2.6354644, y: 5.7798104}
+  m_Offset: {x: -0.10689898, y: -1.7723414}
+  m_Size: {x: 2.3669186, y: 3.1990154}
   m_Direction: 0
---- !u!114 &1592282883264916340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592282883264916343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19e992c1e7d89e43a0820c30a677214, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversations:
-  - {fileID: 4900000, guid: 216ee2ab18f8d654fbf901ff1652133c, type: 3}
-  - {fileID: 4900000, guid: f19f40596d7ee3849adbe1e9500d4c28, type: 3}
-  - {fileID: 4900000, guid: c67f7fbf2db5a19418132cc6666b399b, type: 3}
-  inkManager: {fileID: 0}
-  causedStress: -25
 --- !u!114 &6947927648473479143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,3 +128,46 @@ MonoBehaviour:
   goodbyeResponses:
   - You're welcome!
   - ...
+  conversationLength: 0
+--- !u!114 &1467547502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592282883264916343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6e24f3e1e1686489e84bc25044879a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistance: 0.5
+  destination: 0
+  timeToWait: 5
+  hasCheckedOut: 0
+  plannedPath:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  checkout: {fileID: 0}
+--- !u!114 &1467547508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592282883264916343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad705bba33f3642f4bc26cd844e12c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3.5
+  _angularSpeed: 120
+  _acceleration: 8
+  _stoppingDistance: 0
+  _autoBraking: 1
+  _radius: 1.3
+  _quality: 2
+  _priority: 50
+  _autoRepath: 1

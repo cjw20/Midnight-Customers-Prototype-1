@@ -28,8 +28,13 @@ public class CheckoutMinigame : MonoBehaviour
     public GameObject[] responseButtons;
     public Text[] responseText;
 
+    CheckoutTrigger checkoutTrigger;
+
     void Start()
     {
+        checkoutTrigger = GameObject.Find("Checkout Counter").GetComponent<CheckoutTrigger>();
+        customer = checkoutTrigger.customer; //loads in info from customer standing in front of counter
+
         customerInfo = customer.GetComponent<CustomerInfo>();
 
         nameText.text = customerInfo.name;
@@ -84,7 +89,7 @@ public class CheckoutMinigame : MonoBehaviour
             //move to pay phase?
             //display goodbye message
             //set customer checked out to true so that it will leave after done
-            Destroy(this.gameObject); //end minigame
+            checkoutTrigger.EndCheckout();
         }
     }
 }

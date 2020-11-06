@@ -746,7 +746,7 @@ MonoBehaviour:
   - {fileID: 3405320192971991856}
   checkoutItem: {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
   portraitLocation: {fileID: 1230454916915241467}
-  customer: {fileID: 1592282883264916343, guid: ee7f4431ec36e6445bc68565032de470, type: 3}
+  customer: {fileID: 0}
   dialogueWindow: {fileID: 9031449789072581585}
   nameText: {fileID: 3057714966026928687}
   message: {fileID: 5519314194805212859}
@@ -985,7 +985,7 @@ GameObject:
   - component: {fileID: 279650778105482365}
   - component: {fileID: 1514524123602751372}
   m_Layer: 0
-  m_Name: cashReg
+  m_Name: Cash Register
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
     int maxStress = 100;
     int sanity = 0;
 
-   // CustomerMovement customerScript;
+    public CheckoutTrigger checkoutTrigger;
+    bool nearCheckout = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,11 +47,17 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E))
         {
+            if (nearCheckout && checkoutTrigger.customerNear)
+            {
+                checkoutTrigger.StartCheckout();
+                return;
+            }
+
             if (nearCustomer)
             {
                 
-                closestCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
-                UpdateStress(closestCustomer.GetComponent<DialogueTrigger>().causedStress); //make more efficent later
+                //closestCustomer.GetComponent<DialogueTrigger>().TriggerDialogue();
+                //UpdateStress(closestCustomer.GetComponent<DialogueTrigger>().causedStress); //make more efficent later
 
             }
             
@@ -78,7 +85,7 @@ public class PlayerController : MonoBehaviour
                     //trigger minigame
                 }
 
-                //if neither???
+               
 
             }
            
@@ -102,8 +109,12 @@ public class PlayerController : MonoBehaviour
         {
             nearCustomer = true;
             closestCustomer = other.gameObject;
-          //  customerScript = closestCustomer.GetComponent<CustomerMovement>();
+          
 
+        }
+        if (other.CompareTag("Counter"))
+        {
+            nearCheckout = true;
         }
     }
 
@@ -120,6 +131,10 @@ public class PlayerController : MonoBehaviour
             nearCustomer = false;
             closestCustomer = null;  //resets variable so that player can no longer interact after leaving trigger area
 
+        }
+        if (other.CompareTag("Counter"))
+        {
+            nearCheckout = false;
         }
     }
 
