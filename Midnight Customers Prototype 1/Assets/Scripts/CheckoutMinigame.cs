@@ -22,11 +22,11 @@ public class CheckoutMinigame : MonoBehaviour
     // Start is called before the first frame update
 
 
-    public GameObject dialogueWindow;
-    public Text nameText; //name to display for customer
-    public Text message; //what customer is saying
+    //public GameObject dialogueWindow;
+    //public Text nameText; //name to display for customer
+    public TextMesh message; //what customer is saying
     public GameObject[] responseButtons;
-    public Text[] responseText;
+    public TextMesh[] responseText;
 
     CheckoutTrigger checkoutTrigger;
 
@@ -37,7 +37,7 @@ public class CheckoutMinigame : MonoBehaviour
 
         customerInfo = customer.GetComponent<CustomerInfo>();
 
-        nameText.text = customerInfo.name;
+        //nameText.text = customerInfo.name;
         message.text = customerInfo.greetingMessage;
 
         int i = 0; // variable for counting in loops 
@@ -61,11 +61,7 @@ public class CheckoutMinigame : MonoBehaviour
         //put some of these in separate functions later^
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
     public void UpdatePrice(float cost)
     {
@@ -91,5 +87,11 @@ public class CheckoutMinigame : MonoBehaviour
             //set customer checked out to true so that it will leave after done
             checkoutTrigger.EndCheckout();
         }
+    }
+
+
+    public void NextDialogue()
+    {
+        //load next message and display new options
     }
 }

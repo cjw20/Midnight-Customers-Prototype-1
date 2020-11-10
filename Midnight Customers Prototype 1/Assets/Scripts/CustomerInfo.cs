@@ -11,6 +11,9 @@ public class CustomerInfo : MonoBehaviour
     public string greetingMessage; //first thing customer says
     public string[] greetingResponses; //options for player to respond with
 
+    public string progressMessage; //middle message, sometimes story related
+    public string[] progressResponses; 
+
     public string goodbyeMessage;
     public string[] goodbyeResponses;
 
