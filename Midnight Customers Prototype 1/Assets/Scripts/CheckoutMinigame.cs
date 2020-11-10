@@ -87,9 +87,7 @@ public class CheckoutMinigame : MonoBehaviour
     {
         if(itemsBagged && dialogueFinished)
         {
-            //move to pay phase?
-            //display goodbye message
-            //set customer checked out to true so that it will leave after done
+           
             checkoutTrigger.EndCheckout();
         }
     }
@@ -131,6 +129,8 @@ public class CheckoutMinigame : MonoBehaviour
                         button.SetActive(false);
                     }
                     currentState = CheckoutState.Finished;
+                    dialogueFinished = true;
+                    FinishCheckout();
                     break;
                 }
             default:
