@@ -609,10 +609,10 @@ MonoBehaviour:
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
   portrait: {fileID: 21300000, guid: 176a0a47e2639ed478f2b92f7f2c6f7e, type: 3}
-  greetingMessage: Hey, how's it going?
+  greetingMessage: Hey, how's it hanging?
   greetingResponses:
-  - Pretty well, did you find everything okay?
-  - Is this all?
+  - I'm alright. Did you find everything okay?
+  - Is this everything?
   progressMessage: Yeah. It's a nice night out tonight.
   progressResponses:
   - It sure is.
@@ -634,9 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad705bba33f3642f4bc26cd844e12c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3.5
-  _angularSpeed: 120
-  _acceleration: 8
+  _speed: 2
+  _angularSpeed: 60
+  _acceleration: 4
   _stoppingDistance: 0
   _autoBraking: 1
   _radius: 1.5
@@ -2958,6 +2958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tentacle
       objectReference: {fileID: 0}
+    - target: {fileID: 4361648573279738710, guid: 3bd0996a0e65ab841b6ea87c795368e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bd0996a0e65ab841b6ea87c795368e4, type: 3}
 --- !u!1001 &1592282884153026422
@@ -3302,5 +3306,9 @@ PrefabInstance:
       propertyPath: checkoutGame
       value: 
       objectReference: {fileID: 2955780207351415193, guid: 742776c6f2a67e4468d9ee0efa724dd1, type: 3}
+    - target: {fileID: 8038602828225892247, guid: 34df5b935e815d24ea17bf26aa0513c4, type: 3}
+      propertyPath: sanityMeter
+      value: 
+      objectReference: {fileID: 1940295522}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34df5b935e815d24ea17bf26aa0513c4, type: 3}
