@@ -15,6 +15,7 @@ public class CheckoutItem : MonoBehaviour
     public string itemName; //name of item
 
     public bool isScanned = false; //whether or not the item has been scanned and is ready to be bagged
+    public AudioSource scanSound;
     
     void Start()
     {
@@ -69,6 +70,7 @@ public class CheckoutItem : MonoBehaviour
             {
                 isScanned = true;
                 mgControl.UpdatePrice(price);
+                scanSound.Play();
             }
             
         }
