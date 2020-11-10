@@ -570,6 +570,142 @@ Transform:
   m_Father: {fileID: 86966467}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &405647330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 405647334}
+  - component: {fileID: 405647333}
+  - component: {fileID: 405647332}
+  - component: {fileID: 405647331}
+  m_Layer: 0
+  m_Name: Human Customer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &405647331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405647330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a499980cdb30074e9da45a6eca8bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerName: Henry
+  boughtItems:
+  - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
+  - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
+  - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
+  portrait: {fileID: 21300000, guid: 176a0a47e2639ed478f2b92f7f2c6f7e, type: 3}
+  greetingMessage: Hey, how's it going?
+  greetingResponses:
+  - Pretty well, did you find everything okay?
+  - Is this all?
+  progressMessage: Yeah. It's a nice night out tonight.
+  progressResponses:
+  - It sure is.
+  - I hate the dark.
+  goodbyeMessage: Thanks.
+  goodbyeResponses:
+  - Have a nice evening!
+  - Bye.
+  conversationLength: 0
+--- !u!114 &405647332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405647330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad705bba33f3642f4bc26cd844e12c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3.5
+  _angularSpeed: 120
+  _acceleration: 8
+  _stoppingDistance: 0
+  _autoBraking: 1
+  _radius: 1.5
+  _quality: 0
+  _priority: 50
+  _autoRepath: 1
+--- !u!212 &405647333
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405647330}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -5371758933516134467, guid: ed75187958952f140a5bf961688bf6e4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.35, y: 4.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &405647334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405647330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.188413, y: 3.003826, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443671089
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +907,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.765467
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2057,8 +2193,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717794125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.057, y: 0.004, z: 1}
-  m_LocalScale: {x: 0.28676844, y: 0.22155818, z: 0.23286681}
+  m_LocalPosition: {x: -0.015, y: 0.004, z: 1}
+  m_LocalScale: {x: 0.28894728, y: 0.22155818, z: 0.23286681}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -2867,6 +3003,26 @@ PrefabInstance:
     - target: {fileID: 1592282883264916343, guid: ee7f4431ec36e6445bc68565032de470, type: 3}
       propertyPath: m_Name
       value: Deep One Customer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592282883264916343, guid: ee7f4431ec36e6445bc68565032de470, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947927648473479143, guid: ee7f4431ec36e6445bc68565032de470, type: 3}
+      propertyPath: progressResponses.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947927648473479143, guid: ee7f4431ec36e6445bc68565032de470, type: 3}
+      propertyPath: progressMessage
+      value: 'Whats up '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947927648473479143, guid: ee7f4431ec36e6445bc68565032de470, type: 3}
+      propertyPath: progressResponses.Array.data[0]
+      value: workin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6947927648473479143, guid: ee7f4431ec36e6445bc68565032de470, type: 3}
+      propertyPath: progressResponses.Array.data[1]
+      value: ...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee7f4431ec36e6445bc68565032de470, type: 3}

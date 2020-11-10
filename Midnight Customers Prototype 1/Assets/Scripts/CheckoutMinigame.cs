@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class CheckoutMinigame : MonoBehaviour
 {
+    enum CheckoutState {Greeting, Chat, Goodbye, Finished};
+    CheckoutState currentState;
+
     public GameObject[] itemSpawns; //where check out items will appear\
     public GameObject checkoutItem; //item that will be checked out. Can add variation later 
     GameObject[] boughtItems;
@@ -22,7 +25,7 @@ public class CheckoutMinigame : MonoBehaviour
     // Start is called before the first frame update
 
 
-    //public GameObject dialogueWindow;
+    public GameObject dialogueBox;
     //public Text nameText; //name to display for customer
     public TextMesh message; //what customer is saying
     public GameObject[] responseButtons;
@@ -32,6 +35,8 @@ public class CheckoutMinigame : MonoBehaviour
 
     void Start()
     {
+        currentState = CheckoutState.Greeting; 
+
         checkoutTrigger = GameObject.Find("Checkout Counter").GetComponent<CheckoutTrigger>();
         customer = checkoutTrigger.customer; //loads in info from customer standing in front of counter
 
@@ -92,6 +97,51 @@ public class CheckoutMinigame : MonoBehaviour
 
     public void NextDialogue()
     {
-        //load next message and display new options
+        switch (currentState)
+        {
+            case CheckoutState.Greeting:
+                {
+                    message.text = customerInfo.progressMessage;
+                    int i = 0; // variable for counting in loops 
+                    foreach (string response in customerInfo.progressResponses)
+                    {
+                        responseText[i].text = response;
+                        i++;
+                    }
+                    currentState = CheckoutState.Chat;
+                    break;
+                }
+            case CheckoutState.Chat:
+                {
+                    message.text = customerInfo.goodbyeMessage;
+                    int i = 0; // variable for counting in loops 
+                    foreach (string response in customerInfo.goodbyeResponses)
+                    {
+                        responseText[i].text = response;
+                        i++;
+                    }
+                    currentState = CheckoutState.Goodbye;
+                    break;
+                }
+            case CheckoutState.Goodbye:
+                {
+                    dialogueBox.SetActive(false);
+                    foreach(GameObject button in responseButtons)
+                    {
+                        button.SetActive(false);
+                    }
+                    currentState = CheckoutState.Finished;
+                    break;
+                }
+            default:
+                {
+                    Debug.Log("Uh oh");
+                    break;
+                }
+                
+        }
+
+        //clean up later 
+       
     }
 }
