@@ -17,11 +17,6 @@ public class EmptySpot : MonoBehaviour
         mgControl = GameObject.Find("Stocking Minigame(Clone)").GetComponent<StockingMinigame>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
     private void OnMouseDown()
@@ -31,7 +26,8 @@ public class EmptySpot : MonoBehaviour
             spriteRenderer.sprite = itemSprite;
             this.gameObject.transform.localScale = new Vector3(4f, 4f, 4f);  //increases size of can to better fit shelf. probably wont need this part later
             mgControl.UpdateCount();
+            isStocked = true;
         }
-        //remove ! and put item on shelf
+       
     }
 }
