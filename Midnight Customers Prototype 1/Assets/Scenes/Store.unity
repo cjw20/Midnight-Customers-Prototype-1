@@ -2950,6 +2950,10 @@ PrefabInstance:
       propertyPath: checkout
       value: 
       objectReference: {fileID: 890978991}
+    - target: {fileID: 835373112119920682, guid: 0d8f8767e32ab15419b440a471910b6f, type: 3}
+      propertyPath: greetingResponses.Array.data[0]
+      value: I'm alright.  Did you find everything okay?
+      objectReference: {fileID: 0}
     - target: {fileID: 835373112119920683, guid: 0d8f8767e32ab15419b440a471910b6f, type: 3}
       propertyPath: m_Name
       value: Human Customer
@@ -3628,14 +3632,17 @@ MonoBehaviour:
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
   portrait: {fileID: -3785876381442062384, guid: c083d00e22fa72f428215f72e478201b, type: 3}
-  greetingMessage: Howdy partner
+  greetingMessage: Hello again, do you have any knowledge on this brand of fertilizer
+    mix?
   greetingResponses:
-  - Howdy there
+  - Sorry, no. What is it being used for?
   - ...
-  progressMessage: 
-  progressResponses: []
-  goodbyeMessage: Thanks
+  progressMessage: It is to help a baby tree to grow and get the nutrients it needs.
+  progressResponses:
+  - I am sure that it will work.
+  - ...
+  goodbyeMessage: Thank you, I shall let you know.
   goodbyeResponses:
-  - You're welcome!
+  - Sounds good, See you later.
   - ...
   conversationLength: 0
