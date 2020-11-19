@@ -9,6 +9,8 @@ public class CheckoutTrigger : MonoBehaviour
     public bool customerNear; //true if customer is ready for checkout
     GameObject thisCheckout;
     public GameObject sanityMeter;
+    public GameObject nextCustomer; //next customer to load into scene. can make more sophisticated method later if necessary for more customers
+    bool noMoreCustomers = false; 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,7 +38,15 @@ public class CheckoutTrigger : MonoBehaviour
 
     public void EndCheckout()
     {
+        if (noMoreCustomers == false)
+        {
+            nextCustomer.SetActive(true);
+            noMoreCustomers = true;
+        }
+
+
         //sanityMeter.SetActive(true);
+        
         customer.GetComponent<CustomerMovement>().FinishedCheckout(); //tells customer to leave after checking out
         Destroy(thisCheckout);
     }
