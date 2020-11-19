@@ -3631,7 +3631,7 @@ MonoBehaviour:
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
-  portrait: {fileID: -3785876381442062384, guid: c083d00e22fa72f428215f72e478201b, type: 3}
+  portrait: {fileID: 21300000, guid: 737e18918290c274cab81061c3e085d6, type: 3}
   greetingMessage: Hello again, do you have any knowledge on this brand of fertilizer
     mix?
   greetingResponses:
