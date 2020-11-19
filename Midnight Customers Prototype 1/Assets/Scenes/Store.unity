@@ -153,6 +153,7 @@ Transform:
   - {fileID: 890978991}
   - {fileID: 1186142416}
   - {fileID: 302061602}
+  - {fileID: 1160342287}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1208,6 +1209,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 18.629099, y: 0.84765434}
   m_EdgeRadius: 0
+--- !u!1 &1160342286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160342287}
+  m_Layer: 0
+  m_Name: Shelf 2 Waypoint
+  m_TagString: Destination
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1160342287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160342286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.58, y: -1.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 86966467}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160907698
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,7 +3372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7776943700517180045, guid: 56b53d35711fcde408b1a25cacb98bd8, type: 3}
+  m_Sprite: {fileID: -3785876381442062384, guid: c083d00e22fa72f428215f72e478201b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3361,7 +3392,7 @@ Transform:
   m_GameObject: {fileID: 2881765670651534025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.12, y: 3.78, z: 0}
-  m_LocalScale: {x: 0.4067802, y: 0.3745228, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -3485,7 +3516,7 @@ MonoBehaviour:
   timeToWait: 5
   hasCheckedOut: 0
   plannedPath:
-  - {fileID: 1186142416}
+  - {fileID: 1160342287}
   - {fileID: 890978991}
   - {fileID: 302061602}
   checkout: {fileID: 890978991}
@@ -3596,7 +3627,7 @@ MonoBehaviour:
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
   - {fileID: 1172517309881272756, guid: 4c66785dd2eda0c4380c330ca2d09bc0, type: 3}
-  portrait: {fileID: -7776943700517180045, guid: 56b53d35711fcde408b1a25cacb98bd8, type: 3}
+  portrait: {fileID: -3785876381442062384, guid: c083d00e22fa72f428215f72e478201b, type: 3}
   greetingMessage: Howdy partner
   greetingResponses:
   - Howdy there
