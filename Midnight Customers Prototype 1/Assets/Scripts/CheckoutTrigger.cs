@@ -30,13 +30,13 @@ public class CheckoutTrigger : MonoBehaviour
 
     public void StartCheckout()
     {
-        sanityMeter.SetActive(false);
+        //sanityMeter.SetActive(false);
         thisCheckout = Instantiate(checkoutGame);
     }
 
     public void EndCheckout()
     {
-        sanityMeter.SetActive(true);
+        //sanityMeter.SetActive(true);
         customer.GetComponent<CustomerMovement>().FinishedCheckout(); //tells customer to leave after checking out
         Destroy(thisCheckout);
     }
