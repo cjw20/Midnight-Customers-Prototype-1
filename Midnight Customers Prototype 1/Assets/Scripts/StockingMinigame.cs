@@ -13,11 +13,7 @@ public class StockingMinigame : MonoBehaviour
         numberOfSpots = emptySpots.Length;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
     public void UpdateCount()
     {

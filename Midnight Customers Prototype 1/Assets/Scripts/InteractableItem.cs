@@ -12,22 +12,13 @@ public class InteractableItem : MonoBehaviour
     public string noPrereqMessage; //message shown to player if they dont have proper prerequisite fullfilled
     public string prerequisite; //name of requirement for interaction ex. Mop
 
+    public int causedStress; //amount of stress caused by interaction
     
     public GameObject miniGame; //minigame that will be triggered
     public GameObject gameControl;
     GameControl gc;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
     public void StartInteraction()
     {
         if (isMiniGameTrigger)

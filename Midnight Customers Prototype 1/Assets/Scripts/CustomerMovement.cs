@@ -11,22 +11,25 @@ public class CustomerMovement : MonoBehaviour
 
    // public float speed = 5f;
     public float minDistance = 0.5f;
-    public GameObject[] waypoints;
+    
     public int destination = 0;
-    public Transform target;
+    
     public float timeToWait = 5f; //time for customer to chill at destination before moving to next one
     bool isWaiting;
 
-    public Transform Exit; //exit to store
-    bool wantsToLeave = false;
 
+    public bool hasCheckedOut = false; //set to true after checkout minigame completed
 
+    
+
+    public Transform[] plannedPath; //an array of waypoints that the customer will travel to in course of time in store
+    public Transform checkout;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent2D>();
-        waypoints = GameObject.FindGameObjectsWithTag("Destination");
-        GoToNextPoint();
+        //waypoints = GameObject.FindGameObjectsWithTag("Destination");
+        GoToNextPoint(); //goes to first destination in planned path
     }
 
     // Update is called once per frame
@@ -39,40 +42,50 @@ public class CustomerMovement : MonoBehaviour
 
         if (!agent.pathPending && agent.remainingDistance < minDistance)
         {
-            if (agent.destination == new Vector2 (Exit.position.x, Exit.position.y))
-            {
-                Destroy(this.gameObject);
-                return;
-            }
-            else
-            {
-                StartCoroutine("wait");
-            }
+            
+            StartCoroutine("Wait");
+            
         }
             
             
     }
     void GoToNextPoint()
     {
-        if(wantsToLeave == true)
+        if(destination >= plannedPath.Length)
         {
-            agent.destination = Exit.position;
+            Destroy(this.gameObject); //customer leaves store when path is done
             return;
         }
 
-        agent.destination = waypoints[destination].transform.position;
+        agent.destination = plannedPath[destination].position;
 
-        destination = (destination + 1) % waypoints.Length;
+        destination++;
 
-        
+        isWaiting = false;
     }
 
-    IEnumerator wait()
+    IEnumerator Wait()
     {
         isWaiting = true;
+
+        if (agent.destination == new Vector2(checkout.position.x, checkout.position.y))
+        {
+            yield break; //make function that calls next point after checkout done
+            //wait until checkout minigame done
+        }
+               
+        
         yield return new WaitForSeconds(timeToWait);
-        isWaiting = false;
+        
         GoToNextPoint();
         yield break;
+    }
+
+    public void FinishedCheckout()
+    {
+        //call from MG script after completion
+        isWaiting = false;
+        hasCheckedOut = true;
+        GoToNextPoint();
     }
 }
