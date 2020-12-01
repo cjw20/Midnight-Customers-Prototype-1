@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CheckoutMinigame : MonoBehaviour
 {
-    enum CheckoutState {Greeting, Chat, Goodbye, Finished};
+    enum CheckoutState {Greeting, Chat, Goodbye, Finished, Angry};
     CheckoutState currentState;
 
     public GameObject[] itemSpawns; //where check out items will appear\
@@ -93,6 +93,18 @@ public class CheckoutMinigame : MonoBehaviour
     }
 
 
+    public void outOfTime()
+    {
+        //called when timer runs out
+        currentState = CheckoutState.Angry;
+        message.text = "Hurry up!!";
+        responseText[0].text = "Sorry, I'm new here";
+        responseText[1].text = "Please don't rush me";
+
+        return;
+    }
+
+
     public void NextDialogue()
     {
         switch (currentState)
@@ -125,6 +137,18 @@ public class CheckoutMinigame : MonoBehaviour
                 {
                     dialogueBox.SetActive(false);
                     foreach(GameObject button in responseButtons)
+                    {
+                        button.SetActive(false);
+                    }
+                    currentState = CheckoutState.Finished;
+                    dialogueFinished = true;
+                    FinishCheckout();
+                    break;
+                }
+            case CheckoutState.Angry:
+                {
+                    dialogueBox.SetActive(false);
+                    foreach (GameObject button in responseButtons)
                     {
                         button.SetActive(false);
                     }
